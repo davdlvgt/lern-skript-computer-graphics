@@ -265,8 +265,56 @@ blockquote {
 }
 
 // ============================================
-// Tables
+// Details & Summary (Accordion/Dropdown)
 // ============================================
+
+details {
+  background-color: $bg-secondary;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+
+  &[open] {
+    background-color: $bg-tertiary;
+    border-color: $border-accent;
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.15);
+  }
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: $primary-accent;
+  padding: 0.75rem;
+  margin: -1rem -1rem 0.5rem -1rem;
+  border-radius: 8px;
+  list-style: none;
+  transition: all 0.2s ease;
+  user-select: none;
+  
+  &::-webkit-details-marker {
+    display: none;
+  }
+
+  &::before {
+    content: "\25B6";
+    display: inline-block;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+    color: $primary-accent;
+  }
+
+  &:hover {
+    background-color: rgba(0, 212, 255, 0.1);
+  }
+}
+
+details[open] summary::before {
+  transform: rotate(90deg);
+}
 
 table {
   width: 100%;
