@@ -31,8 +31,9 @@ Vektoren sind das Herzstück. Wichtige Operationen sind:
 
 <details>
 <summary>Lösung anzeigen</summary>
-<p><strong>Das Kreuzprodukt (Cross Product).</strong><br>
-Es erzeugt einen Vektor, der senkrecht auf der Ebene steht, die von den beiden Kantenvektoren aufgespannt wird.</p>
+<br>
+**Das Kreuzprodukt (Cross Product).**
+Es erzeugt einen Vektor, der senkrecht auf der Ebene steht, die von den beiden Kantenvektoren aufgespannt wird.
 </details>
 
 <br>
@@ -41,8 +42,9 @@ Es erzeugt einen Vektor, der senkrecht auf der Ebene steht, die von den beiden K
 
 <details>
 <summary>Lösung anzeigen</summary>
-<p><strong>Weil das Modell sonst gespiegelt sein könnte oder in die falsche Richtung schaut.</strong><br>
-Wenn eine Software Z als "Tiefe in den Bildschirm" (LHS) interpretiert, die Daten aber als "Tiefe aus dem Bildschirm" (RHS) gespeichert wurden, ist die Z-Achse invertiert.</p>
+<br>
+**Weil das Modell sonst gespiegelt sein könnte oder in die falsche Richtung schaut.**
+Wenn eine Software Z als "Tiefe in den Bildschirm" (LHS) interpretiert, die Daten aber als "Tiefe aus dem Bildschirm" (RHS) gespeichert wurden, ist die Z-Achse invertiert.
 </details>
 
 ---
@@ -64,8 +66,9 @@ Die Reihenfolge der Multiplikation ist entscheidend! $A \cdot B$ ist nicht dasse
 
 <details>
 <summary>Lösung anzeigen</summary>
-<p><strong>Um Translationen (Verschiebungen) als Matrixmultiplikation darstellen zu können.</strong><br>
-Mit einer $3 \times 3$ Matrix sind nur lineare Transformationen (Skalierung, Rotation) möglich, aber keine affinen Verschiebungen. Durch die 4. Komponente wird dies möglich.</p>
+<br>
+**Um Translationen (Verschiebungen) als Matrixmultiplikation darstellen zu können.**
+Mit einer $3 \times 3$ Matrix sind nur lineare Transformationen (Skalierung, Rotation) möglich, aber keine affinen Verschiebungen. Durch die 4. Komponente wird dies möglich.
 </details>
 
 <br>
@@ -74,8 +77,9 @@ Mit einer $3 \times 3$ Matrix sind nur lineare Transformationen (Skalierung, Rot
 
 <details>
 <summary>Lösung anzeigen</summary>
-<p><strong>Die Reihenfolge ändert das Ergebnis.</strong><br>
-Wenn du dich erst drehst und dann einen Schritt nach vorne machst, landest du woanders, als wenn du erst einen Schritt nach vorne machst und dich dann drehst. In der Grafikpipeline muss man daher strikt auf die Reihenfolge der Matrizen achten.</p>
+<br>
+**Die Reihenfolge ändert das Ergebnis.**
+Wenn du dich erst drehst und dann einen Schritt nach vorne machst, landest du woanders, als wenn du erst einen Schritt nach vorne machst und dich dann drehst. In der Grafikpipeline muss man daher strikt auf die Reihenfolge der Matrizen achten.
 </details>
 
 ---
@@ -94,8 +98,9 @@ Wenn du dich erst drehst und dann einen Schritt nach vorne machst, landest du wo
 
 <details>
 <summary>Lösung anzeigen</summary>
-<p><strong>Er tritt bei Euler-Winkeln auf.</strong><br>
-Er beschreibt den Zustand, wenn zwei der drei Rotationsachsen parallel zueinander ausgerichtet werden, wodurch das System einen Freiheitsgrad verliert. Eine Rotation um eine der Achsen hat dann keinen Effekt mehr bzw. den gleichen wie die andere.</p>
+<br>
+**Er tritt bei Euler-Winkeln auf.**
+Er beschreibt den Zustand, wenn zwei der drei Rotationsachsen parallel zueinander ausgerichtet werden, wodurch das System einen Freiheitsgrad verliert. Eine Rotation um eine der Achsen hat dann keinen Effekt mehr bzw. den gleichen wie die andere.
 </details>
 
 <br>
@@ -104,8 +109,9 @@ Er beschreibt den Zustand, wenn zwei der drei Rotationsachsen parallel zueinande
 
 <details>
 <summary>Lösung anzeigen</summary>
-<p><strong>Die glatte Interpolation (SLERP).</strong><br>
-Es ist mathematisch einfacher und stabiler, den "kürzesten Weg" zwischen zwei Rotationen mittels Quaternions zu berechnen, als zwischen zwei Matrizen oder Euler-Winkeln zu interpolieren.</p>
+<br>
+**Die glatte Interpolation (SLERP).**
+Es ist mathematisch einfacher und stabiler, den "kürzesten Weg" zwischen zwei Rotationen mittels Quaternions zu berechnen, als zwischen zwei Matrizen oder Euler-Winkeln zu interpolieren.
 </details>
 
 ---
@@ -125,10 +131,9 @@ Wie kommt die 3D-Welt auf den 2D-Bildschirm? Durch Projektion.
 
 <details>
 <summary>Lösung anzeigen</summary>
-<ul>
-<li><strong>Gleich hoch:</strong> Orthographische (Parallele) Projektion.</li>
-<li><strong>Nach hinten kleiner:</strong> Perspektivische Projektion.</li>
-</ul>
+<br>
+* **Gleich hoch:** Orthographische (Parallele) Projektion.
+* **Nach hinten kleiner:** Perspektivische Projektion.
 </details>
 
 <br>
@@ -137,7 +142,8 @@ Wie kommt die 3D-Welt auf den 2D-Bildschirm? Durch Projektion.
 
 <details>
 <summary>Lösung anzeigen</summary>
-<p>Das ist der Bereich im 3D-Raum, den die Kamera "sieht". Alles außerhalb dieses Volumens wird abgeschnitten (Clipping) und nicht berechnet. Bei einer perspektivischen Projektion hat es die Form einer Pyramidestumpfes (Frustum), bei orthographischer Projektion ist es ein Quader.</p>
+<br>
+Das ist der Bereich im 3D-Raum, den die Kamera "sieht". Alles außerhalb dieses Volumens wird abgeschnitten (Clipping) und nicht berechnet. Bei einer perspektivischen Projektion hat es die Form einer Pyramidestumpfes (Frustum), bei orthographischer Projektion ist es ein Quader.
 </details>
 
 ---
@@ -162,8 +168,9 @@ $v' = Projection \cdot View \cdot Model \cdot v$
 
 <details>
 <summary>Lösung anzeigen</summary>
-<p><strong>Den Vertex Shader.</strong><br>
-Er ist für die Manipulation der Geometrie (Position der Vertices) zuständig.</p>
+<br>
+**Den Vertex Shader.**
+Er ist für die Manipulation der Geometrie (Position der Vertices) zuständig.
 </details>
 
 <br>
@@ -172,10 +179,10 @@ Er ist für die Manipulation der Geometrie (Position der Vertices) zuständig.</
 
 <details>
 <summary>Lösung anzeigen</summary>
-<p><strong>Projektion $\cdot$ View $\cdot$ Model $\cdot$ Vertex</strong></p>
-<ol>
-<li><strong>Model-Matrix:</strong> Bringt den Vertex vom lokalen Objektraum in die Welt.</li>
-<li><strong>View-Matrix:</strong> Bringt die Welt in den Kameraraum.</li>
-<li><strong>Projection-Matrix:</strong> Projiziert den Kameraraum auf den 2D-Bildschirm (Clip Space).</li>
-</ol>
+<br>
+**Projektion $\cdot$ View $\cdot$ Model $\cdot$ Vertex**
+
+1. **Model-Matrix:** Bringt den Vertex vom lokalen Objektraum in die Welt.
+2. **View-Matrix:** Bringt die Welt in den Kameraraum.
+3. **Projection-Matrix:** Projiziert den Kameraraum auf den 2D-Bildschirm (Clip Space).
 </details>
