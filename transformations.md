@@ -2,7 +2,6 @@
 layout: default
 title: Transformations
 nav_order: 2
-parent: Home
 ---
 
 # 🎓 Interaktives Lernskript: Transformations (Computer Graphics)
