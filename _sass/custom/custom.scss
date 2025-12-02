@@ -246,7 +246,7 @@ details {
     }
 
     &::before {
-      content: "¶";
+      content: "\25B6";
       display: inline-block;
       margin-right: 0.5rem;
       transition: transform 0.3s ease;
