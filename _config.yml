@@ -5,13 +5,45 @@ title: Lern-Skript Computer Graphics
 description: A learning script for computer graphics.
 
 # The theme for your site
-remote_theme: pmarsceill/just-the-docs
+remote_theme: just-the-docs/just-the-docs
 
 # Enable search
 search_enabled: true
 
 # Set the color scheme
 color_scheme: dark
+
+# Heading anchor links appear on hover over h1-h6 tags in page content
+heading_anchors: true
+
+# Enable or disable the site search
+# Supports true (default) or false
+search_enabled: true
+search:
+  # Split pages into sections that can be searched individually
+  # Supports 1 - 6, default: 2
+  heading_level: 2
+  # Maximum amount of previews per search result
+  # Default: 3
+  previews: 3
+  # Maximum amount of words to display before a matched word in the preview
+  # Default: 5
+  preview_words_before: 5
+  # Maximum amount of words to display after a matched word in the preview
+  # Default: 10
+  preview_words_after: 10
+  # Set the search token separator
+  # Default: /[\s\-/]+/
+  tokenizer_separator: /[\s/]+/
+  # Display the relative url in search results
+  # Supports true (default) or false
+  rel_url: true
+  # Enable or disable the search button that appears in the bottom right corner of every page
+  # Supports true or false (default)
+  button: false
+
+# Activate smooth scrolling
+smooth_scroll: true
 
 # Aux links for the header
 aux_links:
@@ -32,3 +64,8 @@ callouts:
 
 # Footer content
 footer_content: "Copyright &copy; 2025 David Vogt"
+
+# Enable MathJax
+mathjax:
+  source: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  config: 'TeX-AMS-MML_HTMLorMML'

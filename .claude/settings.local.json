@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(if not exist \"_sass\\custom\\custom.scss\" echo.)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
