@@ -24,24 +24,17 @@ body {
 
 // Main content wrapper
 .main-content-wrap {
-  background: rgba($custom-bg-secondary, 0.6);
+  background: rgba($custom-bg-secondary, 0.4);
   backdrop-filter: blur(10px);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 2rem;
-  margin: 2rem auto !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  max-width: 1200px !important;
+  margin: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .main-content {
-  max-width: 900px !important;
-  margin: 0 auto !important;
-  padding-left: 2rem;
-  padding-right: 2rem;
-}
-
-.main {
-  max-width: none !important;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 // Enhanced headings
@@ -302,17 +295,10 @@ hr {
 }
 
 // Responsive improvements
-@media (min-width: 50rem) {
-  .main-content-wrap {
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-
 @media (max-width: 768px) {
   .main-content-wrap {
-    padding: 1rem !important;
-    margin: 0.5rem auto !important;
+    padding: 1rem;
+    margin: 0.5rem;
   }
 
   .main-content {
@@ -415,32 +401,4 @@ em {
 
 mjx-math {
   color: #ffffff !important;
-}
-
-// Additional layout fixes for centered content
-@media (min-width: 50rem) {
-  .main {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 2rem !important;
-    padding-right: 2rem !important;
-  }
-
-  // Ensure content doesn't overlap with fixed sidebar
-  .main-content-wrap {
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-}
-
-// Site header positioning
-.site-header {
-  position: relative !important;
-  z-index: 99 !important;
-}
-
-// Ensure content starts below header properly
-.main-content-wrap {
-  position: relative !important;
-  z-index: 1 !important;
 }
