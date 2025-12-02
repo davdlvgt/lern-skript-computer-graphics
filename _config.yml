@@ -1,3 +1,34 @@
-theme: jekyll-theme-minimal
-title: Octocat's homepage
-description: Bookmark this to keep an eye on my project updates!
+# The title of your site
+title: Lern-Skript Computer Graphics
+
+# The description of your site
+description: A learning script for computer graphics.
+
+# The theme for your site
+remote_theme: pmarsceill/just-the-docs
+
+# Enable search
+search_enabled: true
+
+# Set the color scheme
+color_scheme: dark
+
+# Aux links for the header
+aux_links:
+  "GitHub Repository":
+    - "https://github.com/davdlvgt/lern-skript-computer-graphics.git"
+
+# Callouts
+callouts:
+  warning:
+    title: Warning
+    color: red
+  info:
+    title: Info
+    color: blue
+  note:
+    title: Note
+    color: green
+
+# Footer content
+footer_content: "Copyright &copy; 2025 David Vogt"
