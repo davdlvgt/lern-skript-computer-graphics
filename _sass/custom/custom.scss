@@ -224,12 +224,6 @@ details {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   padding-left: 1rem;
-
-  &[open] {
-    background-color: $bg-tertiary;
-    border-color: $border-accent;
-    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.15);
-  }
 }
 
 summary {
