@@ -1,190 +1,122 @@
-// Enhanced color scheme for dark mode
-$custom-bg: #0d1117;
-$custom-bg-secondary: #161b22;
-$custom-border: #30363d;
-$custom-accent: #58a6ff;
-$custom-accent-hover: #79c0ff;
-$custom-text: #c9d1d9;
-$custom-text-muted: #8b949e;
-$custom-success: #3fb950;
-$custom-warning: #d29922;
-$custom-error: #f85149;
+// Clean, minimal custom styling for Computer Graphics learning script
 
-// Smooth scrolling
-html {
-  scroll-behavior: smooth;
-}
+// Color Variables
+$bg-dark: #1a1d24;
+$bg-card: #242830;
+$border-color: #3d424d;
+$text-color: #e6e8eb;
+$text-muted: #9ca3af;
+$accent-blue: #60a5fa;
+$accent-light: #93c5fd;
 
-// Enhanced body styling
+// Body and Base
 body {
-  background: linear-gradient(135deg, $custom-bg 0%, #0a0e13 100%);
-  color: $custom-text;
-  line-height: 1.7;
+  background-color: $bg-dark;
+  color: $text-color;
 }
 
-// Main content wrapper
-.main-content-wrap {
-  background: rgba($custom-bg-secondary, 0.3);
-  border-radius: 8px;
-  padding: 2rem;
-  margin: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.main-content {
-  max-width: 900px;
-  margin: 0 auto;
-  line-height: 1.8;
-}
-
-// Enhanced headings
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  color: $custom-accent-hover !important;
-}
-
+// Headings - Clean and Simple
 h1 {
-  border-bottom: 2px solid $custom-border;
-  padding-bottom: 0.5em;
-  margin-top: 1.5em !important;
-  margin-bottom: 1em !important;
+  color: $accent-light;
+  border-bottom: 2px solid $border-color;
+  padding-bottom: 0.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-  margin-top: 2em !important;
-  margin-bottom: 1em !important;
-  border-left: 4px solid $custom-accent;
+  color: $accent-blue;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-left: 4px solid $accent-blue;
   padding-left: 1rem;
 }
 
 h3 {
-  margin-top: 1.5em !important;
-  margin-bottom: 0.75em !important;
-  color: $custom-accent !important;
+  color: $accent-blue;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
-// Enhanced navigation
-.side-bar {
-  background: $custom-bg-secondary !important;
-  border-right: 1px solid $custom-border;
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+// Paragraphs and Text
+p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: $text-color;
 }
 
-.nav-list-item {
-  transition: all 0.3s ease;
-  border-radius: 6px;
-  margin: 0.25em 0.5em;
-
-  &:hover {
-    background: rgba($custom-accent, 0.1);
-    transform: translateX(4px);
-  }
+strong {
+  color: $accent-light;
+  font-weight: 600;
 }
 
-.nav-list-link {
-  color: $custom-text !important;
-
-  &:hover {
-    color: $custom-accent-hover !important;
-  }
-
-  &.active {
-    background: rgba($custom-accent, 0.15) !important;
-    color: $custom-accent-hover !important;
-    border-left: 3px solid $custom-accent;
-  }
-}
-
-// Enhanced search
-.search-input {
-  background: $custom-bg !important;
-  border: 2px solid $custom-border !important;
-  color: $custom-text !important;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-
-  &:focus {
-    border-color: $custom-accent !important;
-    box-shadow: 0 0 0 3px rgba($custom-accent, 0.1) !important;
-    outline: none;
-  }
-}
-
-// Enhanced links
+// Links
 a {
-  color: $custom-accent;
+  color: $accent-blue;
   text-decoration: none;
-  transition: all 0.2s ease;
-  border-bottom: 1px solid transparent;
 
   &:hover {
-    color: $custom-accent-hover;
-    border-bottom-color: $custom-accent-hover;
+    color: $accent-light;
+    text-decoration: underline;
   }
 }
 
-// Enhanced code blocks
-pre, code {
-  background: $custom-bg !important;
-  border: 1px solid $custom-border !important;
-  border-radius: 6px !important;
-  font-family: 'Fira Code', 'Consolas', 'Monaco', monospace !important;
+// Lists
+ul, ol {
+  margin: 1rem 0;
+  padding-left: 2rem;
+
+  li {
+    margin: 0.5rem 0;
+    line-height: 1.7;
+  }
+}
+
+// Code Blocks
+code {
+  background: $bg-card;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #f87171;
 }
 
 pre {
-  padding: 1.5em !important;
+  background: $bg-card;
+  padding: 1rem;
+  border-radius: 6px;
   overflow-x: auto;
-  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 1px solid $border-color;
 
   code {
-    background: transparent !important;
-    border: none !important;
-    padding: 0 !important;
+    background: transparent;
+    padding: 0;
+    color: $text-color;
   }
 }
 
-code {
-  padding: 0.2em 0.4em;
-  font-size: 0.9em;
-  color: #ff7b72 !important;
+// Horizontal Rules
+hr {
+  border: none;
+  height: 1px;
+  background: $border-color;
+  margin: 3rem 0;
 }
 
-// Enhanced blockquotes
-blockquote {
-  border-left: 4px solid $custom-accent !important;
-  background: rgba($custom-accent, 0.05) !important;
-  padding: 1em 1.5em !important;
-  margin: 1.5em 0 !important;
-  border-radius: 0 6px 6px 0 !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  color: $custom-text !important;
-}
-
-// Enhanced callouts using the theme's callout system
-.opaque {
-  padding: 1.2em 1.5em !important;
-  border-radius: 8px !important;
-  margin: 1.5em 0 !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-  border-left-width: 4px !important;
-}
-
-// Enhanced details/summary (for collapsible sections)
+// Details/Summary (Solution Boxes)
 details {
-  background: rgba($custom-bg-secondary, 0.5) !important;
-  border: 1px solid $custom-border !important;
-  border-radius: 6px !important;
-  padding: 1rem !important;
-  margin: 1.5rem 0 !important;
-  transition: all 0.3s ease;
+  background: $bg-card;
+  border: 1px solid $border-color;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1.5rem 0;
 
   &[open] {
-    background: rgba($custom-bg-secondary, 0.8) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    background: lighten($bg-card, 3%);
 
     summary {
-      color: $custom-accent-hover !important;
-      border-bottom: 1px solid $custom-border;
+      color: $accent-light;
+      border-bottom: 1px solid $border-color;
       margin-bottom: 1rem;
       padding-bottom: 0.75rem;
     }
@@ -194,224 +126,107 @@ details {
 summary {
   cursor: pointer;
   font-weight: 600;
-  color: $custom-accent !important;
-  transition: color 0.2s ease;
-  user-select: none;
+  color: $accent-blue;
   padding: 0.5rem;
-  font-size: 1.05em;
+  user-select: none;
 
   &:hover {
-    color: $custom-accent-hover !important;
-  }
-
-  &::marker {
-    color: $custom-accent;
+    color: $accent-light;
   }
 }
 
-// Enhanced tables
-table {
-  border-collapse: separate !important;
-  border-spacing: 0 !important;
-  border: 1px solid $custom-border !important;
-  border-radius: 8px !important;
-  overflow: hidden !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-
-  thead {
-    background: $custom-bg-secondary !important;
-
-    th {
-      color: $custom-accent-hover !important;
-      font-weight: 600;
-      padding: 1em !important;
-      border-bottom: 2px solid $custom-accent !important;
-    }
-  }
-
-  tbody {
-    tr {
-      transition: background 0.2s ease;
-
-      &:hover {
-        background: rgba($custom-accent, 0.05) !important;
-      }
-
-      &:nth-child(even) {
-        background: rgba($custom-bg-secondary, 0.3) !important;
-      }
-    }
-
-    td {
-      padding: 0.75em 1em !important;
-      border-bottom: 1px solid $custom-border !important;
-    }
-  }
+// Sidebar
+.side-bar {
+  background: $bg-card;
+  border-right: 1px solid $border-color;
 }
 
-// Enhanced horizontal rules
-hr {
-  border: none !important;
-  height: 1px !important;
-  background: linear-gradient(90deg, transparent, $custom-border, transparent) !important;
-  margin: 3em 0 !important;
-}
-
-// Better spacing for breaks between questions
-br {
-  display: block;
-  margin: 0.5em 0;
-  content: "";
-}
-
-// Enhanced footer
-.site-footer {
-  background: $custom-bg-secondary !important;
-  border-top: 1px solid $custom-border !important;
-  padding: 2em !important;
-  text-align: center;
-  color: $custom-text-muted !important;
-}
-
-// Enhanced scrollbar
-::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: $custom-bg;
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: $custom-border;
-  border-radius: 6px;
-
+// Navigation
+.nav-list-link {
   &:hover {
-    background: lighten($custom-border, 10%);
+    background: rgba($accent-blue, 0.1);
+  }
+
+  &.active {
+    background: rgba($accent-blue, 0.15);
+    border-left: 3px solid $accent-blue;
   }
 }
 
-// Responsive improvements
-@media (max-width: 768px) {
-  .main-content-wrap {
-    padding: 1rem;
-    margin: 0.5rem;
-  }
-
-  .main-content {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  h1 {
-    font-size: 2em !important;
-  }
+// Main Content
+.main-content {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-// Additional enhancements for lists
-ul, ol {
-  padding-left: 2em;
-  margin: 1em 0;
-
-  li {
-    margin: 0.6em 0;
-    color: $custom-text;
-    line-height: 1.7;
-
-    &::marker {
-      color: $custom-accent;
-    }
-  }
-
-  // Nested lists in details
-  details & {
-    margin: 0.5em 0;
-  }
-}
-
-// Button styling
-.btn, button {
-  background: $custom-accent !important;
-  color: white !important;
-  border: none !important;
-  padding: 0.75em 1.5em !important;
-  border-radius: 6px !important;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba($custom-accent, 0.3) !important;
-
-  &:hover {
-    background: $custom-accent-hover !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba($custom-accent, 0.4) !important;
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
-}
-
-// Aux links styling
-.aux-nav {
-  .aux-nav-list-item {
-    a {
-      color: $custom-accent !important;
-
-      &:hover {
-        color: $custom-accent-hover !important;
-      }
-    }
-  }
-}
-
-// Site header enhancements
+// Site Header
 .site-header {
-  background: $custom-bg-secondary !important;
-  border-bottom: 1px solid $custom-border !important;
+  background: $bg-card;
+  border-bottom: 1px solid $border-color;
 }
 
-.site-title {
-  color: #ffffff !important;
-  font-weight: 700;
+// Footer
+.site-footer {
+  background: $bg-card;
+  border-top: 1px solid $border-color;
+  color: $text-muted;
+}
 
-  &:hover {
-    color: $custom-accent-hover !important;
+// Search
+.search-input {
+  background: $bg-card;
+  border: 1px solid $border-color;
+  color: $text-color;
+
+  &:focus {
+    border-color: $accent-blue;
+    outline: none;
   }
 }
 
-// Paragraph spacing
-p {
-  margin-bottom: 1.2em;
-  margin-top: 0.8em;
-  line-height: 1.8;
-  color: $custom-text;
+// Blockquotes
+blockquote {
+  border-left: 4px solid $accent-blue;
+  background: rgba($accent-blue, 0.05);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 4px;
 }
 
-// Strong and emphasis
-strong {
-  color: $custom-accent-hover;
-  font-weight: 600;
+// Tables
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+
+  th, td {
+    padding: 0.75rem;
+    border: 1px solid $border-color;
+  }
+
+  th {
+    background: $bg-card;
+    font-weight: 600;
+    color: $accent-light;
+  }
+
+  tr:hover {
+    background: rgba($accent-blue, 0.05);
+  }
 }
 
-em {
-  color: lighten($custom-text, 10%);
+// Math (MathJax)
+.MathJax, mjx-container {
+  color: $accent-light !important;
 }
 
-// Better spacing for questions
-.main-content > p:has(strong) {
-  margin-top: 1.5em;
-  margin-bottom: 1em;
-}
+// Responsive
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.75rem;
+  }
 
-// Math formula styling (MathJax)
-.MathJax, .MathJax_Display, mjx-container {
-  color: $custom-accent-hover !important;
-  font-size: 1.1em !important;
-}
-
-mjx-math {
-  color: #ffffff !important;
+  h2 {
+    font-size: 1.5rem;
+  }
 }
