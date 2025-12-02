@@ -35,8 +35,6 @@ Vektoren sind das Herzstück. Wichtige Operationen sind:
 Es erzeugt einen Vektor, der senkrecht auf der Ebene steht, die von den beiden Kantenvektoren aufgespannt wird.
 </details>
 
-<br>
-
 **Frage 2:** Warum ist die Unterscheidung zwischen links- und rechtshändigen Koordinatensystemen wichtig, wenn man 3D-Modelle importiert?
 
 <details>
@@ -45,8 +43,6 @@ Es erzeugt einen Vektor, der senkrecht auf der Ebene steht, die von den beiden K
 **Weil das Modell sonst gespiegelt sein könnte oder in die falsche Richtung schaut.**
 Wenn eine Software Z als "Tiefe in den Bildschirm" (LHS) interpretiert, die Daten aber als "Tiefe aus dem Bildschirm" (RHS) gespeichert wurden, ist die Z-Achse invertiert.
 </details>
-
----
 
 ## Einheit 2: Matrizen & Homogene Koordinaten
 *(Basierend auf Folien 25-36)*
@@ -70,8 +66,6 @@ Die Reihenfolge der Multiplikation ist entscheidend! $A \cdot B$ ist nicht dasse
 Mit einer $3 \times 3$ Matrix sind nur lineare Transformationen (Skalierung, Rotation) möglich, aber keine affinen Verschiebungen. Durch die 4. Komponente wird dies möglich.
 </details>
 
-<br>
-
 **Frage 4:** Was bedeutet es mathematisch, wenn wir sagen "Matrix-Multiplikation ist nicht kommutativ"? Was heißt das für die Anwendung (z.B. erst Rotieren, dann Verschieben vs. erst Verschieben, dann Rotieren)?
 
 <details>
@@ -82,8 +76,6 @@ Mit einer $3 \times 3$ Matrix sind nur lineare Transformationen (Skalierung, Rot
 **Die Reihenfolge ändert das Ergebnis.**
 Wenn du dich erst drehst und dann einen Schritt nach vorne machst, landest du woanders, als wenn du erst einen Schritt nach vorne machst und dich dann drehst. In der Grafikpipeline muss man daher strikt auf die Reihenfolge der Matrizen achten.
 </details>
-
----
 
 ## Einheit 3: Transformationen & Quaternions
 *(Basierend auf Folien 37-60)*
@@ -104,8 +96,6 @@ Wenn du dich erst drehst und dann einen Schritt nach vorne machst, landest du wo
 Er beschreibt den Zustand, wenn zwei der drei Rotationsachsen parallel zueinander ausgerichtet werden, wodurch das System einen Freiheitsgrad verliert. Eine Rotation um eine der Achsen hat dann keinen Effekt mehr bzw. den gleichen wie die andere.
 </details>
 
-<br>
-
 **Frage 6:** Nenne einen großen Vorteil von Quaternions gegenüber Rotationsmatrizen oder Euler-Winkeln, wenn es um Animationen geht.
 
 <details>
@@ -114,8 +104,6 @@ Er beschreibt den Zustand, wenn zwei der drei Rotationsachsen parallel zueinande
 **Die glatte Interpolation (SLERP).**
 Es ist mathematisch einfacher und stabiler, den "kürzesten Weg" zwischen zwei Rotationen mittels Quaternions zu berechnen, als zwischen zwei Matrizen oder Euler-Winkeln zu interpolieren.
 </details>
-
----
 
 ## Einheit 4: Projektionen
 *(Basierend auf Folien 62-77)*
@@ -137,8 +125,6 @@ Wie kommt die 3D-Welt auf den 2D-Bildschirm? Durch Projektion.
 * **Nach hinten kleiner:** Perspektivische Projektion.
 </details>
 
-<br>
-
 **Frage 8:** Was ist das "Viewing Frustum" (Sichtpyramide)?
 
 <details>
@@ -146,8 +132,6 @@ Wie kommt die 3D-Welt auf den 2D-Bildschirm? Durch Projektion.
 <br>
 Das ist der Bereich im 3D-Raum, den die Kamera "sieht". Alles außerhalb dieses Volumens wird abgeschnitten (Clipping) und nicht berechnet. Bei einer perspektivischen Projektion hat es die Form einer Pyramidestumpfes (Frustum), bei orthographischer Projektion ist es ein Quader.
 </details>
-
----
 
 ## Einheit 5: Die Grafik-Pipeline
 *(Basierend auf Folien 82-96)*
@@ -174,16 +158,22 @@ $v' = Projection \cdot View \cdot Model \cdot v$
 Er ist für die Manipulation der Geometrie (Position der Vertices) zuständig.
 </details>
 
-<br>
-
 **Frage 10:** In welcher Reihenfolge werden die Matrizen üblicherweise auf einen Vertex $v$ angewendet, um ihn auf den Bildschirm zu bringen? (Denk an die mathematische Schreibweise von rechts nach links).
 
 <details>
+
 <summary>Lösung anzeigen</summary>
+
 <br>
+
 **Projektion $\cdot$ View $\cdot$ Model $\cdot$ Vertex**
 
+
+
 1. **Model-Matrix:** Bringt den Vertex vom lokalen Objektraum in die Welt.
+
 2. **View-Matrix:** Bringt die Welt in den Kameraraum.
+
 3. **Projection-Matrix:** Projiziert den Kameraraum auf den 2D-Bildschirm (Clip Space).
+
 </details>

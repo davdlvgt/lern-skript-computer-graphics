@@ -36,8 +36,6 @@ Bézier-Kurven haben einen Nachteil: Wenn man einen Kontrollpunkt bewegt, verän
 Der Bresenham-Algorithmus ist deutlich effizienter, da er auf teure Fließkomma-Berechnungen und Divisionen verzichtet und stattdessen nur Ganzzahl-Operationen (Addition, Subtraktion, Bit-Shifting) verwendet. Zudem vermeidet er Lücken bei steilen Linien.
 </details>
 
-<br>
-
 **Frage 2: Du hast eine kubische Bézier-Kurve. Wie viele Kontrollpunkte benötigst du dafür und durch wie viele dieser Punkte verläuft die Kurve garantiert?**
 <details>
 <summary>Lösung anzeigen</summary>
@@ -45,16 +43,12 @@ Der Bresenham-Algorithmus ist deutlich effizienter, da er auf teure Fließkomma-
 Man benötigt **4 Kontrollpunkte** ($P_0$ bis $P_3$). Die Kurve verläuft garantiert durch **2 Punkte**: den Startpunkt ($P_0$) und den Endpunkt ($P_3$).
 </details>
 
-<br>
-
 **Frage 3: Was ist der entscheidende Unterschied zwischen einer normalen B-Spline und einer NURBS-Kurve, insbesondere wenn es um Formen wie Kreise geht?**
 <details>
 <summary>Lösung anzeigen</summary>
 <br>
 NURBS (Non-Uniform Rational B-Splines) haben zusätzlich **Gewichte** für die Kontrollpunkte. Dies ermöglicht die mathematisch **exakte** Darstellung von Kegelschnitten (wie Kreisen und Ellipsen). Normale B-Splines können Kreise nur annähern.
 </details>
-
----
 
 ## Teil 2: Polygon-Netze (Polygon Meshes)
 
@@ -85,8 +79,6 @@ Viele Algorithmen arbeiten nur auf Dreiecken. Ein komplexes Polygon muss also in
 Weil einfache Listen keine expliziten **Nachbarschaftsinformationen** (Topologie) speichern. Wenn man z.B. wissen will, welches Dreieck *neben* Dreieck A liegt, müsste man die ganze Liste durchsuchen. Strukturen wie DCEL/Half-Edge speichern diese Verbindungen direkt.
 </details>
 
-<br>
-
 **Frage 5: Was ist der Unterschied zwischen einem "Vertex Split" und einem "Face Split" bei Subdivision-Schemata?**
 <details>
 <summary>Lösung anzeigen</summary>
@@ -95,16 +87,12 @@ Weil einfache Listen keine expliziten **Nachbarschaftsinformationen** (Topologie
 * **Face Split:** Fügt einen neuen Punkt in die Mitte einer Fläche oder Kante ein und unterteilt die Fläche (z.B. wird ein Viereck in vier kleinere Vierecke geteilt). Dies ist die gängigste Methode (z.B. Catmull-Clark).
 </details>
 
-<br>
-
 **Frage 6: Ein Polygonnetz soll "watertight" (wasserdicht) sein. Was bedeutet das für die Kanten des Netzes?**
 <details>
 <summary>Lösung anzeigen</summary>
 <br>
 Es bedeutet, dass das Netz geschlossen ist (ein Volumen umschließt). Jede Kante im Netz muss an genau **zwei** Flächen grenzen. Es darf keine "offenen" Kanten geben, an denen nur eine Fläche hängt, und keine Kanten, an denen mehr als zwei Flächen hängen (Non-Manifold).
 </details>
-
----
 
 ## Teil 3: Subdivision & CSG
 
@@ -133,8 +121,6 @@ Hier wird nicht mit Punkten und Kanten modelliert, sondern mit **Volumen-Primiti
 **Catmull-Clark Subdivision.** Es ist der Industriestandard für Quad-Meshes und erzeugt reine Quad-Topologie (außer an sehr speziellen Stellen). Loop Subdivision hingegen ist für Dreiecke gedacht.
 </details>
 
-<br>
-
 **Frage 8: Du möchtest ein Modell erstellen, das exakt wie ein Schweizer Käse aussieht (ein Block mit vielen Löchern). Welches Modellierungsverfahren (CSG oder Splines) ist hierfür intuitiver und warum?**
 <details>
 <summary>Lösung anzeigen</summary>
@@ -142,8 +128,6 @@ Hier wird nicht mit Punkten und Kanten modelliert, sondern mit **Volumen-Primiti
 **CSG (Constructive Solid Geometry).**
 Man kann einfach einen Würfel nehmen und Kugeln an den entsprechenden Stellen mittels der **Differenz (Difference)**-Operation abziehen ("subtrahieren"). Mit Splines wäre das Loch-Schneiden viel aufwendiger.
 </details>
-
----
 
 ## Teil 4: Volumetrische Modellierung
 
@@ -168,8 +152,6 @@ Wie macht man aus Voxeln (z.B. einem MRT-Scan) wieder ein 3D-Modell aus Dreiecke
 <br>
 Aus der **Medizin**, speziell aus der Computertomographie (CT) oder Magnetresonanztomographie (MRT). Diese Geräte erzeugen Schichtbilder, die gestapelt ein Voxel-Gitter ergeben.
 </details>
-
-<br>
 
 **Frage 10: Was ist das Ziel des "Marching Cubes"-Algorithmus?**
 <details>
