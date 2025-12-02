@@ -223,8 +223,6 @@ details {
   margin: 1.5rem 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  display: block;
-  clear: both;
 
   &[open] {
     background-color: $bg-tertiary;
@@ -243,7 +241,6 @@ summary {
   list-style: none;
   transition: all 0.2s ease;
   user-select: none;
-  display: block;
 
   &::-webkit-details-marker {
     display: none;
