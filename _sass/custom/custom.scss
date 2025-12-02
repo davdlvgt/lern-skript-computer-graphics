@@ -24,52 +24,43 @@ body {
 
 // Main content wrapper
 .main-content-wrap {
-  background: rgba($custom-bg-secondary, 0.4);
-  backdrop-filter: blur(10px);
+  background: rgba($custom-bg-secondary, 0.3);
   border-radius: 8px;
   padding: 2rem;
   margin: 1rem;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .main-content {
   max-width: 900px;
   margin: 0 auto;
+  line-height: 1.8;
 }
 
 // Enhanced headings
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
-  color: #ffffff !important;
-  position: relative;
-  padding-left: 0;
-
-  &::before {
-    content: "";
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: linear-gradient(90deg, $custom-accent, $custom-accent-hover);
-    margin-bottom: 0.5em;
-    border-radius: 2px;
-  }
+  color: $custom-accent-hover !important;
 }
 
 h1 {
-  font-size: 2.5em !important;
   border-bottom: 2px solid $custom-border;
   padding-bottom: 0.5em;
-  margin-top: 1em !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 1em !important;
 }
 
 h2 {
-  font-size: 2em !important;
   margin-top: 2em !important;
+  margin-bottom: 1em !important;
+  border-left: 4px solid $custom-accent;
+  padding-left: 1rem;
 }
 
 h3 {
-  font-size: 1.5em !important;
   margin-top: 1.5em !important;
+  margin-bottom: 0.75em !important;
+  color: $custom-accent !important;
 }
 
 // Enhanced navigation
@@ -180,21 +171,22 @@ blockquote {
 
 // Enhanced details/summary (for collapsible sections)
 details {
-  background: $custom-bg-secondary !important;
+  background: rgba($custom-bg-secondary, 0.5) !important;
   border: 1px solid $custom-border !important;
-  border-radius: 8px !important;
-  padding: 1em !important;
-  margin: 1em 0 !important;
+  border-radius: 6px !important;
+  padding: 1rem !important;
+  margin: 1.5rem 0 !important;
   transition: all 0.3s ease;
 
   &[open] {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    background: rgba($custom-bg-secondary, 0.8) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 
     summary {
       color: $custom-accent-hover !important;
       border-bottom: 1px solid $custom-border;
-      margin-bottom: 1em;
-      padding-bottom: 0.5em;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
     }
   }
 }
@@ -203,13 +195,13 @@ summary {
   cursor: pointer;
   font-weight: 600;
   color: $custom-accent !important;
-  transition: all 0.2s ease;
+  transition: color 0.2s ease;
   user-select: none;
-  padding: 0.5em;
+  padding: 0.5rem;
+  font-size: 1.05em;
 
   &:hover {
     color: $custom-accent-hover !important;
-    transform: translateX(4px);
   }
 
   &::marker {
@@ -260,9 +252,16 @@ table {
 // Enhanced horizontal rules
 hr {
   border: none !important;
-  height: 2px !important;
+  height: 1px !important;
   background: linear-gradient(90deg, transparent, $custom-border, transparent) !important;
-  margin: 2em 0 !important;
+  margin: 3em 0 !important;
+}
+
+// Better spacing for breaks between questions
+br {
+  display: block;
+  margin: 0.5em 0;
+  content: "";
 }
 
 // Enhanced footer
@@ -314,14 +313,21 @@ hr {
 // Additional enhancements for lists
 ul, ol {
   padding-left: 2em;
+  margin: 1em 0;
 
   li {
-    margin: 0.5em 0;
+    margin: 0.6em 0;
     color: $custom-text;
+    line-height: 1.7;
 
     &::marker {
       color: $custom-accent;
     }
+  }
+
+  // Nested lists in details
+  details & {
+    margin: 0.5em 0;
   }
 }
 
@@ -378,8 +384,9 @@ ul, ol {
 
 // Paragraph spacing
 p {
-  margin-bottom: 1em;
-  line-height: 1.7;
+  margin-bottom: 1.2em;
+  margin-top: 0.8em;
+  line-height: 1.8;
   color: $custom-text;
 }
 
@@ -391,6 +398,12 @@ strong {
 
 em {
   color: lighten($custom-text, 10%);
+}
+
+// Better spacing for questions
+.main-content > p:has(strong) {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
 }
 
 // Math formula styling (MathJax)
