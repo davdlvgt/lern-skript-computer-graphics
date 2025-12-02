@@ -56,4 +56,4 @@ Ready to dive in? Start with the [Transformations](./transformations.md) module 
 
 ---
 
-**Last Updated:** December 2025 | **Author:** David Vogt
+**Last Updated:** December 2025 | **Author:** David Vogt :)
