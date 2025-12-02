@@ -84,11 +84,6 @@ h3 {
   background: $custom-bg-secondary !important;
   border-right: 1px solid $custom-border;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
-  left: 0 !important;
-  position: fixed !important;
-  top: 0 !important;
-  height: 100vh !important;
-  z-index: 100 !important;
 }
 
 .nav-list-item {
@@ -328,11 +323,6 @@ hr {
   h1 {
     font-size: 2em !important;
   }
-
-  .side-bar {
-    position: relative !important;
-    height: auto !important;
-  }
 }
 
 // Additional enhancements for lists
@@ -428,17 +418,18 @@ mjx-math {
 }
 
 // Additional layout fixes for centered content
-.page-wrap {
-  display: flex !important;
-  justify-content: center !important;
-}
-
 @media (min-width: 50rem) {
   .main {
     margin-left: auto !important;
     margin-right: auto !important;
     padding-left: 2rem !important;
     padding-right: 2rem !important;
+  }
+
+  // Ensure content doesn't overlap with fixed sidebar
+  .main-content-wrap {
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 }
 
