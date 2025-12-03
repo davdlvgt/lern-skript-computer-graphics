@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(if not exist \"_sass\\custom\\custom.scss\" echo.)"
+      "Bash(if not exist \"_sass\\custom\\custom.scss\" echo.)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []
