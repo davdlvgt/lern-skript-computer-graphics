@@ -31,24 +31,18 @@ Bézier-Kurven haben einen Nachteil: Wenn man einen Kontrollpunkt bewegt, verän
 
 **Frage 1: Was ist der Hauptvorteil des Bresenham-Algorithmus gegenüber dem einfachen Zeichnen einer Linieformel ($y=mx+c$)?**
 
-<details markdown="1">
-<summary>Lösung anzeigen</summary>
-Der Bresenham-Algorithmus ist deutlich effizienter, da er auf teure Fließkomma-Berechnungen und Divisionen verzichtet und stattdessen nur Ganzzahl-Operationen (Addition, Subtraktion, Bit-Shifting) verwendet. Zudem vermeidet er Lücken bei steilen Linien.
-</details>
+<details>
+<summary>Lösung anzeigen</summary><p>Der Bresenham-Algorithmus ist deutlich effizienter, da er auf teure Fließkomma-Berechnungen und Divisionen verzichtet und stattdessen nur Ganzzahl-Operationen (Addition, Subtraktion, Bit-Shifting) verwendet. Zudem vermeidet er Lücken bei steilen Linien.</p></details>
 
 **Frage 2: Du hast eine kubische Bézier-Kurve. Wie viele Kontrollpunkte benötigst du dafür und durch wie viele dieser Punkte verläuft die Kurve garantiert?**
 
-<details markdown="1">
-<summary>Lösung anzeigen</summary>
-Man benötigt **4 Kontrollpunkte** ($P_0$ bis $P_3$). Die Kurve verläuft garantiert durch **2 Punkte**: den Startpunkt ($P_0$) und den Endpunkt ($P_3$).
-</details>
+<details>
+<summary>Lösung anzeigen</summary><p>Man benötigt <strong>4 Kontrollpunkte</strong> ($P_0$ bis $P_3$). Die Kurve verläuft garantiert durch <strong>2 Punkte</strong>: den Startpunkt ($P_0$) und den Endpunkt ($P_3$).</p></details>
 
 **Frage 3: Was ist der entscheidende Unterschied zwischen einer normalen B-Spline und einer NURBS-Kurve, insbesondere wenn es um Formen wie Kreise geht?**
 
-<details markdown="1">
-<summary>Lösung anzeigen</summary>
-NURBS (Non-Uniform Rational B-Splines) haben zusätzlich **Gewichte** für die Kontrollpunkte. Dies ermöglicht die mathematisch **exakte** Darstellung von Kegelschnitten (wie Kreisen und Ellipsen). Normale B-Splines können Kreise nur annähern.
-</details>
+<details>
+<summary>Lösung anzeigen</summary><p>NURBS (Non-Uniform Rational B-Splines) haben zusätzlich <strong>Gewichte</strong> für die Kontrollpunkte. Dies ermöglicht die mathematisch <strong>exakte</strong> Darstellung von Kegelschnitten (wie Kreisen und Ellipsen). Normale B-Splines können Kreise nur annähern.</p></details>
 
 ## Teil 2: Polygon-Netze (Polygon Meshes)
 
@@ -74,25 +68,23 @@ Viele Algorithmen arbeiten nur auf Dreiecken. Ein komplexes Polygon muss also in
 
 **Frage 4: Warum reicht eine einfache Liste von Dreiecken (z.B. "Dreieck A besteht aus Punkt 1, 2, 3") oft nicht aus für komplexe Modellierungs-Operationen?**
 
-<details markdown="1">
-<summary>Lösung anzeigen</summary>
-Weil einfache Listen keine expliziten **Nachbarschaftsinformationen** (Topologie) speichern. Wenn man z.B. wissen will, welches Dreieck *neben* Dreieck A liegt, müsste man die ganze Liste durchsuchen. Strukturen wie DCEL/Half-Edge speichern diese Verbindungen direkt.
-</details>
+<details>
+<summary>Lösung anzeigen</summary><p>Weil einfache Listen keine expliziten <strong>Nachbarschaftsinformationen</strong> (Topologie) speichern. Wenn man z.B. wissen will, welches Dreieck <em>neben</em> Dreieck A liegt, müsste man die ganze Liste durchsuchen. Strukturen wie DCEL/Half-Edge speichern diese Verbindungen direkt.</p></details>
 
 **Frage 5: Was ist der Unterschied zwischen einem "Vertex Split" und einem "Face Split" bei Subdivision-Schemata?**
 
-<details markdown="1">
+<details>
 <summary>Lösung anzeigen</summary>
-* **Vertex Split:** Erzeugt neue Punkte für die angrenzenden Flächen eines Punktes (selten bei Dreiecken).
-* **Face Split:** Fügt einen neuen Punkt in die Mitte einer Fläche oder Kante ein und unterteilt die Fläche (z.B. wird ein Viereck in vier kleinere Vierecke geteilt). Dies ist die gängigste Methode (z.B. Catmull-Clark).
+<ul>
+<li><strong>Vertex Split:</strong> Erzeugt neue Punkte für die angrenzenden Flächen eines Punktes (selten bei Dreiecken).</li>
+<li><strong>Face Split:</strong> Fügt einen neuen Punkt in die Mitte einer Fläche oder Kante ein und unterteilt die Fläche (z.B. wird ein Viereck in vier kleinere Vierecke geteilt). Dies ist die gängigste Methode (z.B. Catmull-Clark).</li>
+</ul>
 </details>
 
 **Frage 6: Ein Polygonnetz soll "watertight" (wasserdicht) sein. Was bedeutet das für die Kanten des Netzes?**
 
-<details markdown="1">
-<summary>Lösung anzeigen</summary>
-Es bedeutet, dass das Netz geschlossen ist (ein Volumen umschließt). Jede Kante im Netz muss an genau **zwei** Flächen grenzen. Es darf keine "offenen" Kanten geben, an denen nur eine Fläche hängt, und keine Kanten, an denen mehr als zwei Flächen hängen (Non-Manifold).
-</details>
+<details>
+<summary>Lösung anzeigen</summary><p>Es bedeutet, dass das Netz geschlossen ist (ein Volumen umschließt). Jede Kante im Netz muss an genau <strong>zwei</strong> Flächen grenzen. Es darf keine "offenen" Kanten geben, an denen nur eine Fläche hängt, und keine Kanten, an denen mehr als zwei Flächen hängen (Non-Manifold).</p></details>
 
 ## Teil 3: Subdivision & CSG
 
@@ -116,18 +108,14 @@ Hier wird nicht mit Punkten und Kanten modelliert, sondern mit **Volumen-Primiti
 
 **Frage 7: Welches Subdivision-Schema eignet sich am besten, wenn dein Modell hauptsächlich aus Vierecken (Quads) besteht?**
 
-<details markdown="1">
-<summary>Lösung anzeigen</summary>
-**Catmull-Clark Subdivision.** Es ist der Industriestandard für Quad-Meshes und erzeugt reine Quad-Topologie (außer an sehr speziellen Stellen). Loop Subdivision hingegen ist für Dreiecke gedacht.
-</details>
+<details>
+<summary>Lösung anzeigen</summary><p><strong>Catmull-Clark Subdivision.</strong> Es ist der Industriestandard für Quad-Meshes und erzeugt reine Quad-Topologie (außer an sehr speziellen Stellen). Loop Subdivision hingegen ist für Dreiecke gedacht.</p></details>
 
 **Frage 8: Du möchtest ein Modell erstellen, das exakt wie ein Schweizer Käse aussieht (ein Block mit vielen Löchern). Welches Modellierungsverfahren (CSG oder Splines) ist hierfür intuitiver und warum?**
 
-<details markdown="1">
-<summary>Lösung anzeigen</summary>
-**CSG (Constructive Solid Geometry).**
-Man kann einfach einen Würfel nehmen und Kugeln an den entsprechenden Stellen mittels der **Differenz (Difference)**-Operation abziehen ("subtrahieren"). Mit Splines wäre das Loch-Schneiden viel aufwendiger.
-</details>
+<details>
+<summary>Lösung anzeigen</summary><p><strong>CSG (Constructive Solid Geometry).</strong>
+Man kann einfach einen Würfel nehmen und Kugeln an den entsprechenden Stellen mittels der <strong>Differenz (Difference)</strong>-Operation abziehen ("subtrahieren"). Mit Splines wäre das Loch-Schneiden viel aufwendiger.</p></details>
 
 ## Teil 4: Volumetrische Modellierung
 
@@ -148,14 +136,10 @@ Wie macht man aus Voxeln (z.B. einem MRT-Scan) wieder ein 3D-Modell aus Dreiecke
 
 **Frage 9: Woher kennt man Voxel-Daten typischerweise aus der realen Welt (außerhalb von Spielen)?**
 
-<details markdown="1">
-<summary>Lösung anzeigen</summary>
-Aus der **Medizin**, speziell aus der Computertomographie (CT) oder Magnetresonanztomographie (MRT). Diese Geräte erzeugen Schichtbilder, die gestapelt ein Voxel-Gitter ergeben.
-</details>
+<details>
+<summary>Lösung anzeigen</summary><p>Aus der <strong>Medizin</strong>, speziell aus der Computertomographie (CT) oder Magnetresonanztomographie (MRT). Diese Geräte erzeugen Schichtbilder, die gestapelt ein Voxel-Gitter ergeben.</p></details>
 
 **Frage 10: Was ist das Ziel des "Marching Cubes"-Algorithmus?**
 
-<details markdown="1">
-<summary>Lösung anzeigen</summary>
-Er konvertiert **volumetrische Daten (Voxel)** in ein **Oberflächen-Modell (Polygone/Dreiecke)**. Er extrahiert also eine Iso-Oberfläche aus einem Datenfeld, damit sie von Standard-Grafikkarten gerendert werden kann.
-</details>
+<details>
+<summary>Lösung anzeigen</summary><p>Er konvertiert <strong>volumetrische Daten (Voxel)</strong> in ein <strong>Oberflächen-Modell (Polygone/Dreiecke)</strong>. Er extrahiert also eine Iso-Oberfläche aus einem Datenfeld, damit sie von Standard-Grafikkarten gerendert werden kann.</p></details>
