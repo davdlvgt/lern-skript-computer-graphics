@@ -30,7 +30,8 @@ Bézier-Kurven haben einen Nachteil: Wenn man einen Kontrollpunkt bewegt, verän
 ### 🧠 Quiz: Parametrische Kurven
 
 **Frage 1: Was ist der Hauptvorteil des Bresenham-Algorithmus gegenüber dem einfachen Zeichnen einer Linieformel ($y=mx+c$)?**
-<details>
+
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 Der Bresenham-Algorithmus ist deutlich effizienter, da er auf teure Fließkomma-Berechnungen und Divisionen verzichtet und stattdessen nur Ganzzahl-Operationen (Addition, Subtraktion, Bit-Shifting) verwendet. Zudem vermeidet er Lücken bei steilen Linien.
@@ -38,7 +39,8 @@ Der Bresenham-Algorithmus ist deutlich effizienter, da er auf teure Fließkomma-
 </details>
 
 **Frage 2: Du hast eine kubische Bézier-Kurve. Wie viele Kontrollpunkte benötigst du dafür und durch wie viele dieser Punkte verläuft die Kurve garantiert?**
-<details>
+
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 Man benötigt **4 Kontrollpunkte** ($P_0$ bis $P_3$). Die Kurve verläuft garantiert durch **2 Punkte**: den Startpunkt ($P_0$) und den Endpunkt ($P_3$).
@@ -46,7 +48,8 @@ Man benötigt **4 Kontrollpunkte** ($P_0$ bis $P_3$). Die Kurve verläuft garant
 </details>
 
 **Frage 3: Was ist der entscheidende Unterschied zwischen einer normalen B-Spline und einer NURBS-Kurve, insbesondere wenn es um Formen wie Kreise geht?**
-<details>
+
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 NURBS (Non-Uniform Rational B-Splines) haben zusätzlich **Gewichte** für die Kontrollpunkte. Dies ermöglicht die mathematisch **exakte** Darstellung von Kegelschnitten (wie Kreisen und Ellipsen). Normale B-Splines können Kreise nur annähern.
@@ -76,7 +79,8 @@ Viele Algorithmen arbeiten nur auf Dreiecken. Ein komplexes Polygon muss also in
 ### 🧠 Quiz: Polygone & Datenstrukturen
 
 **Frage 4: Warum reicht eine einfache Liste von Dreiecken (z.B. "Dreieck A besteht aus Punkt 1, 2, 3") oft nicht aus für komplexe Modellierungs-Operationen?**
-<details>
+
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 Weil einfache Listen keine expliziten **Nachbarschaftsinformationen** (Topologie) speichern. Wenn man z.B. wissen will, welches Dreieck *neben* Dreieck A liegt, müsste man die ganze Liste durchsuchen. Strukturen wie DCEL/Half-Edge speichern diese Verbindungen direkt.
@@ -84,7 +88,8 @@ Weil einfache Listen keine expliziten **Nachbarschaftsinformationen** (Topologie
 </details>
 
 **Frage 5: Was ist der Unterschied zwischen einem "Vertex Split" und einem "Face Split" bei Subdivision-Schemata?**
-<details>
+
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 * **Vertex Split:** Erzeugt neue Punkte für die angrenzenden Flächen eines Punktes (selten bei Dreiecken).
@@ -93,7 +98,8 @@ Weil einfache Listen keine expliziten **Nachbarschaftsinformationen** (Topologie
 </details>
 
 **Frage 6: Ein Polygonnetz soll "watertight" (wasserdicht) sein. Was bedeutet das für die Kanten des Netzes?**
-<details>
+
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 Es bedeutet, dass das Netz geschlossen ist (ein Volumen umschließt). Jede Kante im Netz muss an genau **zwei** Flächen grenzen. Es darf keine "offenen" Kanten geben, an denen nur eine Fläche hängt, und keine Kanten, an denen mehr als zwei Flächen hängen (Non-Manifold).
@@ -121,7 +127,8 @@ Hier wird nicht mit Punkten und Kanten modelliert, sondern mit **Volumen-Primiti
 ### 🧠 Quiz: Fortgeschrittene Modellierung
 
 **Frage 7: Welches Subdivision-Schema eignet sich am besten, wenn dein Modell hauptsächlich aus Vierecken (Quads) besteht?**
-<details>
+
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 **Catmull-Clark Subdivision.** Es ist der Industriestandard für Quad-Meshes und erzeugt reine Quad-Topologie (außer an sehr speziellen Stellen). Loop Subdivision hingegen ist für Dreiecke gedacht.
@@ -129,7 +136,8 @@ Hier wird nicht mit Punkten und Kanten modelliert, sondern mit **Volumen-Primiti
 </details>
 
 **Frage 8: Du möchtest ein Modell erstellen, das exakt wie ein Schweizer Käse aussieht (ein Block mit vielen Löchern). Welches Modellierungsverfahren (CSG oder Splines) ist hierfür intuitiver und warum?**
-<details>
+
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 **CSG (Constructive Solid Geometry).**
@@ -155,7 +163,8 @@ Wie macht man aus Voxeln (z.B. einem MRT-Scan) wieder ein 3D-Modell aus Dreiecke
 ### 🧠 Quiz: Volumen
 
 **Frage 9: Woher kennt man Voxel-Daten typischerweise aus der realen Welt (außerhalb von Spielen)?**
-<details>
+
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 Aus der **Medizin**, speziell aus der Computertomographie (CT) oder Magnetresonanztomographie (MRT). Diese Geräte erzeugen Schichtbilder, die gestapelt ein Voxel-Gitter ergeben.
@@ -163,7 +172,8 @@ Aus der **Medizin**, speziell aus der Computertomographie (CT) oder Magnetresona
 </details>
 
 **Frage 10: Was ist das Ziel des "Marching Cubes"-Algorithmus?**
-<details>
+
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 Er konvertiert **volumetrische Daten (Voxel)** in ein **Oberflächen-Modell (Polygone/Dreiecke)**. Er extrahiert also eine Iso-Oberfläche aus einem Datenfeld, damit sie von Standard-Grafikkarten gerendert werden kann.

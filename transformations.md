@@ -28,7 +28,7 @@ Vektoren sind das Herzstück. Wichtige Operationen sind:
 
 **Frage 1:** Du hast zwei Vektoren, die die Kanten eines Dreiecks im 3D-Raum darstellen. Du möchtest wissen, in welche Richtung die Fläche des Dreiecks zeigt (die "Normale"). Welche Operation verwendest du?
 
-<details>
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 **Das Kreuzprodukt (Cross Product).**
@@ -38,7 +38,7 @@ Es erzeugt einen Vektor, der senkrecht auf der Ebene steht, die von den beiden K
 
 **Frage 2:** Warum ist die Unterscheidung zwischen links- und rechtshändigen Koordinatensystemen wichtig, wenn man 3D-Modelle importiert?
 
-<details>
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 **Weil das Modell sonst gespiegelt sein könnte oder in die falsche Richtung schaut.**
@@ -61,7 +61,7 @@ Die Reihenfolge der Multiplikation ist entscheidend! $A \cdot B$ ist nicht dasse
 
 **Frage 3:** Warum verwenden wir in der Computergrafik oft $4 \times 4$ Matrizen für 3D-Vektoren statt $3 \times 3$?
 
-<details>
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 **Um Translationen (Verschiebungen) als Matrixmultiplikation darstellen zu können.**
@@ -71,7 +71,7 @@ Mit einer $3 \times 3$ Matrix sind nur lineare Transformationen (Skalierung, Rot
 
 **Frage 4:** Was bedeutet es mathematisch, wenn wir sagen "Matrix-Multiplikation ist nicht kommutativ"? Was heißt das für die Anwendung (z.B. erst Rotieren, dann Verschieben vs. erst Verschieben, dann Rotieren)?
 
-<details>
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 **Die Reihenfolge ändert das Ergebnis.**
@@ -91,7 +91,7 @@ Wenn du dich erst drehst und dann einen Schritt nach vorne machst, landest du wo
 
 **Frage 5:** Was ist der "Gimbal Lock" (kardinale Blockade) und bei welcher Rotationsmethode tritt er auf?
 
-<details>
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 **Er tritt bei Euler-Winkeln auf.**
@@ -101,7 +101,7 @@ Er beschreibt den Zustand, wenn zwei der drei Rotationsachsen parallel zueinande
 
 **Frage 6:** Nenne einen großen Vorteil von Quaternions gegenüber Rotationsmatrizen oder Euler-Winkeln, wenn es um Animationen geht.
 
-<details>
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 **Die glatte Interpolation (SLERP).**
@@ -122,7 +122,7 @@ Wie kommt die 3D-Welt auf den 2D-Bildschirm? Durch Projektion.
 
 **Frage 7:** Du renderst ein Haus. In der einen Ansicht sind die Wände hinten genauso hoch wie vorne. In der anderen Ansicht werden die Wände nach hinten kleiner. Welche Projektionsart ist welche?
 
-<details>
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 * **Gleich hoch:** Orthographische (Parallele) Projektion.
@@ -132,7 +132,7 @@ Wie kommt die 3D-Welt auf den 2D-Bildschirm? Durch Projektion.
 
 **Frage 8:** Was ist das "Viewing Frustum" (Sichtpyramide)?
 
-<details>
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 Das ist der Bereich im 3D-Raum, den die Kamera "sieht". Alles außerhalb dieses Volumens wird abgeschnitten (Clipping) und nicht berechnet. Bei einer perspektivischen Projektion hat es die Form einer Pyramidestumpfes (Frustum), bei orthographischer Projektion ist es ein Quader.
@@ -157,7 +157,7 @@ $v' = Projection \cdot View \cdot Model \cdot v$
 
 **Frage 9:** Wenn du die Position aller Eckpunkte eines Objekts verändern willst (z.B. eine Welle, die durch ein Gitter läuft), welchen Shader bearbeitest du?
 
-<details>
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 **Den Vertex Shader.**
@@ -167,7 +167,7 @@ Er ist für die Manipulation der Geometrie (Position der Vertices) zuständig.
 
 **Frage 10:** In welcher Reihenfolge werden die Matrizen üblicherweise auf einen Vertex $v$ angewendet, um ihn auf den Bildschirm zu bringen? (Denk an die mathematische Schreibweise von rechts nach links).
 
-<details>
+<details markdown="1">
 <summary>Lösung anzeigen</summary>
 
 **Projektion $\cdot$ View $\cdot$ Model $\cdot$ Vertex**
