@@ -28,15 +28,11 @@ Vektoren sind das Herzstück. Wichtige Operationen sind:
 
 **Frage 1:** Du hast zwei Vektoren, die die Kanten eines Dreiecks im 3D-Raum darstellen. Du möchtest wissen, in welche Richtung die Fläche des Dreiecks zeigt (die "Normale"). Welche Operation verwendest du?
 
-<details>
-<summary>Lösung anzeigen</summary><p><strong>Das Kreuzprodukt (Cross Product).</strong>
-Es erzeugt einen Vektor, der senkrecht auf der Ebene steht, die von den beiden Kantenvektoren aufgespannt wird.</p></details>
+<details><summary>Lösung anzeigen</summary><p><strong>Das Kreuzprodukt (Cross Product).</strong> Es erzeugt einen Vektor, der senkrecht auf der Ebene steht, die von den beiden Kantenvektoren aufgespannt wird.</p></details>
 
 **Frage 2:** Warum ist die Unterscheidung zwischen links- und rechtshändigen Koordinatensystemen wichtig, wenn man 3D-Modelle importiert?
 
-<details>
-<summary>Lösung anzeigen</summary><p><strong>Weil das Modell sonst gespiegelt sein könnte oder in die falsche Richtung schaut.</strong>
-Wenn eine Software Z als "Tiefe in den Bildschirm" (LHS) interpretiert, die Daten aber als "Tiefe aus dem Bildschirm" (RHS) gespeichert wurden, ist die Z-Achse invertiert.</p></details>
+<details><summary>Lösung anzeigen</summary><p><strong>Weil das Modell sonst gespiegelt sein könnte oder in die falsche Richtung schaut.</strong> Wenn eine Software Z als "Tiefe in den Bildschirm" (LHS) interpretiert, die Daten aber als "Tiefe aus dem Bildschirm" (RHS) gespeichert wurden, ist die Z-Achse invertiert.</p></details>
 
 ## Einheit 2: Matrizen & Homogene Koordinaten
 *(Basierend auf Folien 25-36)*
@@ -53,15 +49,11 @@ Die Reihenfolge der Multiplikation ist entscheidend! $A \cdot B$ ist nicht dasse
 
 **Frage 3:** Warum verwenden wir in der Computergrafik oft $4 \times 4$ Matrizen für 3D-Vektoren statt $3 \times 3$?
 
-<details>
-<summary>Lösung anzeigen</summary><p><strong>Um Translationen (Verschiebungen) als Matrixmultiplikation darstellen zu können.</strong>
-Mit einer $3 \times 3$ Matrix sind nur lineare Transformationen (Skalierung, Rotation) möglich, aber keine affinen Verschiebungen. Durch die 4. Komponente wird dies möglich.</p></details>
+<details><summary>Lösung anzeigen</summary><p><strong>Um Translationen (Verschiebungen) als Matrixmultiplikation darstellen zu können.</strong> Mit einer $3 \times 3$ Matrix sind nur lineare Transformationen (Skalierung, Rotation) möglich, aber keine affinen Verschiebungen. Durch die 4. Komponente wird dies möglich.</p></details>
 
 **Frage 4:** Was bedeutet es mathematisch, wenn wir sagen "Matrix-Multiplikation ist nicht kommutativ"? Was heißt das für die Anwendung (z.B. erst Rotieren, dann Verschieben vs. erst Verschieben, dann Rotieren)?
 
-<details>
-<summary>Lösung anzeigen</summary><p><strong>Die Reihenfolge ändert das Ergebnis.</strong>
-Wenn du dich erst drehst und dann einen Schritt nach vorne machst, landest du woanders, als wenn du erst einen Schritt nach vorne machst und dich dann drehst. In der Grafikpipeline muss man daher strikt auf die Reihenfolge der Matrizen achten.</p></details>
+<details><summary>Lösung anzeigen</summary><p><strong>Die Reihenfolge ändert das Ergebnis.</strong> Wenn du dich erst drehst und dann einen Schritt nach vorne machst, landest du woanders, als wenn du erst einen Schritt nach vorne machst und dich dann drehst. In der Grafikpipeline muss man daher strikt auf die Reihenfolge der Matrizen achten.</p></details>
 
 ## Einheit 3: Transformationen & Quaternions
 *(Basierend auf Folien 37-60)*
@@ -75,15 +67,11 @@ Wenn du dich erst drehst und dann einen Schritt nach vorne machst, landest du wo
 
 **Frage 5:** Was ist der "Gimbal Lock" (kardinale Blockade) und bei welcher Rotationsmethode tritt er auf?
 
-<details>
-<summary>Lösung anzeigen</summary><p><strong>Er tritt bei Euler-Winkeln auf.</strong>
-Er beschreibt den Zustand, wenn zwei der drei Rotationsachsen parallel zueinander ausgerichtet werden, wodurch das System einen Freiheitsgrad verliert. Eine Rotation um eine der Achsen hat dann keinen Effekt mehr bzw. den gleichen wie die andere.</p></details>
+<details><summary>Lösung anzeigen</summary><p><strong>Er tritt bei Euler-Winkeln auf.</strong> Er beschreibt den Zustand, wenn zwei der drei Rotationsachsen parallel zueinander ausgerichtet werden, wodurch das System einen Freiheitsgrad verliert. Eine Rotation um eine der Achsen hat dann keinen Effekt mehr bzw. den gleichen wie die andere.</p></details>
 
 **Frage 6:** Nenne einen großen Vorteil von Quaternions gegenüber Rotationsmatrizen oder Euler-Winkeln, wenn es um Animationen geht.
 
-<details>
-<summary>Lösung anzeigen</summary><p><strong>Die glatte Interpolation (SLERP).</strong>
-Es ist mathematisch einfacher und stabiler, den "kürzesten Weg" zwischen zwei Rotationen mittels Quaternions zu berechnen, als zwischen zwei Matrizen oder Euler-Winkeln zu interpolieren.</p></details>
+<details><summary>Lösung anzeigen</summary><p><strong>Die glatte Interpolation (SLERP).</strong> Es ist mathematisch einfacher und stabiler, den "kürzesten Weg" zwischen zwei Rotationen mittels Quaternions zu berechnen, als zwischen zwei Matrizen oder Euler-Winkeln zu interpolieren.</p></details>
 
 ## Einheit 4: Projektionen
 *(Basierend auf Folien 62-77)*
@@ -98,18 +86,11 @@ Wie kommt die 3D-Welt auf den 2D-Bildschirm? Durch Projektion.
 
 **Frage 7:** Du renderst ein Haus. In der einen Ansicht sind die Wände hinten genauso hoch wie vorne. In der anderen Ansicht werden die Wände nach hinten kleiner. Welche Projektionsart ist welche?
 
-<details>
-<summary>Lösung anzeigen</summary>
-<ul>
-<li><strong>Gleich hoch:</strong> Orthographische (Parallele) Projektion.</li>
-<li><strong>Nach hinten kleiner:</strong> Perspektivische Projektion.</li>
-</ul>
-</details>
+<details><summary>Lösung anzeigen</summary><ul> <li><strong>Gleich hoch:</strong> Orthographische (Parallele) Projektion.</li> <li><strong>Nach hinten kleiner:</strong> Perspektivische Projektion.</li> </ul></details>
 
 **Frage 8:** Was ist das "Viewing Frustum" (Sichtpyramide)?
 
-<details>
-<summary>Lösung anzeigen</summary><p>Das ist der Bereich im 3D-Raum, den die Kamera "sieht". Alles außerhalb dieses Volumens wird abgeschnitten (Clipping) und nicht berechnet. Bei einer perspektivischen Projektion hat es die Form einer Pyramidestumpfes (Frustum), bei orthographischer Projektion ist es ein Quader.</p></details>
+<details><summary>Lösung anzeigen</summary><p>Das ist der Bereich im 3D-Raum, den die Kamera "sieht". Alles außerhalb dieses Volumens wird abgeschnitten (Clipping) und nicht berechnet. Bei einer perspektivischen Projektion hat es die Form einer Pyramidestumpfes (Frustum), bei orthographischer Projektion ist es ein Quader.</p></details>
 
 ## Einheit 5: Die Grafik-Pipeline
 *(Basierend auf Folien 82-96)*
@@ -129,18 +110,8 @@ $v' = Projection \cdot View \cdot Model \cdot v$
 
 **Frage 9:** Wenn du die Position aller Eckpunkte eines Objekts verändern willst (z.B. eine Welle, die durch ein Gitter läuft), welchen Shader bearbeitest du?
 
-<details>
-<summary>Lösung anzeigen</summary><p><strong>Den Vertex Shader.</strong>
-Er ist für die Manipulation der Geometrie (Position der Vertices) zuständig.</p></details>
+<details><summary>Lösung anzeigen</summary><p><strong>Den Vertex Shader.</strong> Er ist für die Manipulation der Geometrie (Position der Vertices) zuständig.</p></details>
 
 **Frage 10:** In welcher Reihenfolge werden die Matrizen üblicherweise auf einen Vertex $v$ angewendet, um ihn auf den Bildschirm zu bringen? (Denk an die mathematische Schreibweise von rechts nach links).
 
-<details>
-<summary>Lösung anzeigen</summary>
-<p><strong>Projektion $\cdot$ View $\cdot$ Model $\cdot$ Vertex</strong></p>
-<ol>
-<li><strong>Model-Matrix:</strong> Bringt den Vertex vom lokalen Objektraum in die Welt.</li>
-<li><strong>View-Matrix:</strong> Bringt die Welt in den Kameraraum.</li>
-<li><strong>Projection-Matrix:</strong> Projiziert den Kameraraum auf den 2D-Bildschirm (Clip Space).</li>
-</ol>
-</details>
+<details><summary>Lösung anzeigen</summary><p><strong>Projektion $\cdot$ View $\cdot$ Model $\cdot$ Vertex</strong></p> <ol> <li><strong>Model-Matrix:</strong> Bringt den Vertex vom lokalen Objektraum in die Welt.</li> <li><strong>View-Matrix:</strong> Bringt die Welt in den Kameraraum.</li> <li><strong>Projection-Matrix:</strong> Projiziert den Kameraraum auf den 2D-Bildschirm (Clip Space).</li> </ol></details>
