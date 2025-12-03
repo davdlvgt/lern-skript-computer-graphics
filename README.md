@@ -11,6 +11,7 @@ Welcome to the learning script for computer graphics. This script covers various
 ## Topics
 
 - [Transformations](./transformations.md)
+- [Modeling] (./modeling.md)
 
 > This is a callout!
 {: .note }
