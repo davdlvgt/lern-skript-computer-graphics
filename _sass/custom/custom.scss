@@ -265,6 +265,109 @@ blockquote {
 }
 
 // ============================================
+// Details & Summary (Collapsible Sections)
+// ============================================
+
+details {
+  margin: 1.5rem 0;
+  padding: 0;
+  background-color: $bg-secondary;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $border-accent;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  &[open] {
+    border-color: $primary-accent;
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.2);
+
+    > summary {
+      border-bottom: 1px solid $border-color;
+      background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+
+      &::before {
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  // Prevent nesting issues by using direct child selector
+  > summary {
+    display: block;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: $text-primary;
+    background-color: $bg-tertiary;
+    user-select: none;
+    transition: all 0.2s ease;
+    position: relative;
+    padding-left: 3rem;
+
+    &:hover {
+      background-color: lighten($bg-tertiary, 3%);
+      color: $primary-accent;
+    }
+
+    &:focus-visible {
+      outline: 2px solid $primary-accent;
+      outline-offset: -2px;
+    }
+
+    // Remove default marker
+    &::-webkit-details-marker,
+    &::marker {
+      display: none;
+    }
+
+    // Custom arrow indicator
+    &::before {
+      content: '▶';
+      position: absolute;
+      left: 1rem;
+      color: $primary-accent;
+      transition: transform 0.2s ease;
+      font-size: 0.8em;
+    }
+  }
+
+  // Content area - use direct child selector to prevent nesting cascade
+  > *:not(summary) {
+    padding: 1.25rem 1.5rem;
+    color: $text-secondary;
+
+    // Reset margins for first/last children within details
+    &:first-of-type {
+      padding-top: 1.25rem;
+    }
+
+    &:last-child {
+      padding-bottom: 1.25rem;
+    }
+  }
+
+  // Nested details support (if you need it) - with increased specificity
+  details {
+    margin: 1rem 0;
+    background-color: $bg-elevated;
+    border-color: rgba(255, 255, 255, 0.05);
+
+    > summary {
+      background-color: darken($bg-tertiary, 2%);
+      padding: 0.75rem 1rem;
+      padding-left: 2.5rem;
+      font-size: 0.95em;
+    }
+  }
+}
+
+// ============================================
 // Main Content Area
 // ============================================
 
